@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ollama Chat</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div class="sidebar">
+    <select class="model-select" id="model-select">
+        <option value="deepseek-r1:7b">DeepSeek-R1 7B</option>
+        <option value="mistral">Mistral 7B</option>
+        <option value="phi">Phi-2</option>
+    </select>
+    <button class="new-chat-btn" onclick="createNewSession()">+ New Chat</button>
+    <div class="session-list" id="session-list"></div>
+</div>
+
+<div class="chat-container">
+    <div class="messages" id="chat-window">
+        <div class="message">
+            <div class="bot-message">
+                Welcome to Ollama Chat! Select a model and start conversing.
+                <div class="code-block">// Sample code block styling
+                    console.log('Hello World');</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <div class="input-box">
+            <input type="text" id="prompt-input" placeholder="Message Ollama..."
+                   onkeypress="handleEnterKey(event)">
+            <button onclick="submitPrompt()">Send</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        Ollama Chat v1.0 | Responses may be inaccurate
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.0/dist/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+/* ChatGPT-like Styling with Enhancements */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #343541;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 260px;
+    background: #202123;
+    padding: 16px;
+    border-right: 1px solid #343541;
+    color: #ececf1;
+    display: flex;
+    flex-direction: column;
+}
+
+.model-select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    background: #343541;
+    border: 1px solid #565869;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    appearance: none;
+}
+
+.new-chat-btn {
+    width: 100%;
+    padding: 12px;
+    background: #343541;
+    border: 1px solid #565869;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: all 0.2s;
+}
+
+.new-chat-btn:hover {
+    background: #2b2c38;
+}
+
+.session-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.session-item {
+    padding: 12px;
+    margin: 4px 0;
+    border-radius: 6px;
+    background: #2a2b32;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.session-item:hover {
+    background: #343541;
+}
+
+.session-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.session-model {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.session-details {
+    display: flex;
+    justify-content: space-between;
+    color: #8e8ea0;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    scroll-behavior: smooth;
+}
+
+.message {
+    max-width: 800px;
+    margin: 20px auto;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.user-message {
+    background: #343541;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #565869;
+    margin-left: auto;
+    width: fit-content;
+}
+
+.bot-message {
+    background: #444654;
+    padding: 16px;
+    border-radius: 8px;
+    margin-right: auto;
+    width: fit-content;
+    position: relative;
+}
+
+.thinking-indicator {
+    background: #444654;
+    padding: 16px;
+    border-radius: 8px;
+    margin-right: auto;
+    width: fit-content;
+    color: #8e8ea0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot-flashing {
+    position: relative;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #8e8ea0;
+    animation: dotFlashing 1s infinite linear;
+}
+
+@keyframes dotFlashing {
+    0% { background-color: #8e8ea0; }
+    50%, 100% { background-color: rgba(142, 142, 160, 0.2); }
+}
+
+.input-container {
+    padding: 24px;
+    background: #40414f;
+    position: sticky;
+    bottom: 0;
+}
+
+.input-box {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 12px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    background: #40414f;
+    border: 1px solid #565869;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #8e8ea0;
+}
+
+button {
+    background: #10a37f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #0d8a6a;
+}
+
+.footer {
+    text-align: center;
+    color: #8e8ea0;
+    padding: 16px;
+    border-top: 1px solid #565869;
+    font-size: 12px;
+}
+
+.code-block {
+    background: #2d2d2d;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    margin: 8px 0;
+}
+
+.timeout-warning {
+    background: #444654;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: fit-content;
+    color: #8e8ea0;
+    font-size: 14px;
+}
+
+.reconnect-btn {
+    background: #10a37f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
