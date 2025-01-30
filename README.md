@@ -91,7 +91,7 @@ Start a new chat session.
 Enter prompts and view responses in real-time.
 
 ## Project Structure
-
+```bash
 ollama-chat-ui/
 ├── src/
 │   ├── main/
@@ -106,7 +106,7 @@ ollama-chat-ui/
 │   └── test/                                      # Unit tests
 ├── pom.xml                                        # Maven build configuration
 └── README.md                                      # Project documentation
-
+```
 ## API Endpoints
 WebSocket Endpoints
 Create Session: /app/create-session
